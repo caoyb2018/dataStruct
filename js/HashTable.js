@@ -1,5 +1,5 @@
 const LinkedList = require('./LinkedList').LinkedList
-//console.log(LinkedList)
+console.log(LinkedList)
 class HashTable {
 
     constructor() {
