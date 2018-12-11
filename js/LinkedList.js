@@ -99,16 +99,20 @@ class LinkedList {
 		return string
 	}
 }
+module.exports={
+//	Node,
+	LinkedList
+}
 const linkedList = new LinkedList()
 
 //console.log(linkedList)
-linkedList.append(2)
-linkedList.append(6)
-linkedList.append(24)
-linkedList.append(152)
-linkedList.remove(2)
-
-//linkedList.insert(2, 18)
-console.log(linkedList)
-console.log(linkedList.findIndex(24))
-console.log(linkedList.toString())
+//linkedList.append(2)
+//linkedList.append(6)
+//linkedList.append(24)
+//linkedList.append(152)
+//linkedList.remove(2)
+//
+////linkedList.insert(2, 18)
+//console.log(linkedList)
+//console.log(linkedList.findIndex(24))
+//console.log(linkedList.toString())
