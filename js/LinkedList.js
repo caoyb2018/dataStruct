@@ -4,7 +4,7 @@ class Node {
 		this.next = null
 	}
 }
-class LinkedList {
+export default class LinkedList {
 	constructor() {
 		this.head = null
 		this.length = 0
@@ -99,10 +99,10 @@ class LinkedList {
 		return string
 	}
 }
-module.exports={
-//	Node,
-	LinkedList
-}
+//module.exports={
+////	Node,
+//	LinkedList
+//}
 const linkedList = new LinkedList()
 
 //console.log(linkedList)
