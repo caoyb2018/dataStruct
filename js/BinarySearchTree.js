@@ -35,6 +35,7 @@ class BinarySearchTree {
             insertNode(this.root, newNode)
         }
     }
+    
     inOrderTraverse(callback) {//中序遍历算法
     	const inOrderTraverseNode = (node, callback) => {
         	if (node !== null) {
@@ -45,6 +46,7 @@ class BinarySearchTree {
     	}
     	inOrderTraverseNode(this.root, callback)
 	}
+    
     preOrderTraverse(callback) {//先序遍历
     	const preOrderTraverseNode = (node, callback) => {
         	if (node !== null) {
@@ -55,6 +57,7 @@ class BinarySearchTree {
     	}
     	preOrderTraverseNode(this.root, callback)
 	}
+    
     postOrderTraverse(callback) {//后序遍历
     	const postOrderTraverseNode = (node, callback) => {
         	if (node !== null) {
@@ -64,6 +67,65 @@ class BinarySearchTree {
         	}
     	}
     	postOrderTraverseNode(this.root, callback)
+	}
+    
+    min(node) {
+    	const minNode = node => {
+        	return node ? (node.left ? minNode(node.left) : node) : null
+    	}
+    	return minNode(node || this.root)
+	}
+
+	max(node) {
+    	const maxNode = node => {
+        	return node ? (node.right ? maxNode(node.right) : node) : null
+    	}
+    	return maxNode(node || this.root)
+	}
+	
+	search(key) {
+    	const searchNode = (node, key) => {
+        	if (node === null) return false
+        	if (node.key === key) return node
+        	return searchNode((key < node.key) ? node.left : node.right, key)
+    	}
+    	return searchNode(root, key)
+	}
+	
+	remove(key) {
+    	const removeNode = (node, key) => {
+        	if (node === null) return false
+        	if (node.key === key) {
+            	console.log(node)
+            	if (node.left === null && node.right === null) {
+                	let _node = node
+                	node = null
+                	return _node
+            	} else {
+                	console.log('key', key)
+            	}
+        	} else if (node.left !== null && node.key > key) {
+            	if (node.left.key === key) {
+                	node.left.key = this.min(node.left.right).key
+                	removeNode(node.left.right, node.left.key)
+                	return node.left
+            	} else {
+                	return removeNode(node.left, key)
+            	}
+        	} else if (node.right !== null && node.key < key) {
+            	if (node.right.key === key) {
+                	node.right.key = this.min(node.right.right).key
+                	removeNode(node.right.right, node.right.key)
+                	return node.right
+            	} else {
+                	return removeNode(node.right, key)
+            	}
+        	} else {
+            	return false
+        	}
+        	return removeNode((key < node.key) ? node.left : node.right, key)
+    	}
+    	return removeNode(this.root, key)
 	}
 }
 const tree = new BinarySearchTree()
@@ -80,4 +142,8 @@ tree.insert(14)
 tree.insert(20)
 tree.insert(18)
 tree.insert(25)
+tree.preOrderTraverse(value => { console.log(value) })
+console.log(tree.max())
+console.log(tree.min())
+tree.remove(25)
 tree.preOrderTraverse(value => { console.log(value) })
