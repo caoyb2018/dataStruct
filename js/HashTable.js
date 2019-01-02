@@ -1,6 +1,6 @@
-//const LinkedList = require('./LinkedList').LinkedList
-import {LinkedList}from './LinkedList'
-//console.log(LinkedList)
+const LinkedList = require('./LinkedList').LinkedList
+// import {LinkedList}from './LinkedList'
+// //console.log(LinkedList)
 class HashTable {
 
     constructor() {
