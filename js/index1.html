@@ -1,0 +1,452 @@
+<html><head></head>
+
+<body>
+
+  <div style="width: 555.28px; margin: auto;">
+    
+    <div id="printArea">
+      <div class="adjustEnd">
+        <div class="tableTitle">被评估者基本信息表</div>
+        <div class="tableInfo">
+          <div class="topTwo"><span>姓名</span><span>王二小</span></div>
+          <div class="topTwo"><span>性别</span><span>女</span></div>
+          <div class="topTwo"><span>出生日期</span><span>1969-01-10</span></div>
+          <div class="topTwo"><span>证件号</span><span>11010119900307299X</span></div>
+          <div class="topTwo"><span>社保卡号</span><span>123456</span></div>
+          <div class="topTwo"><span>住址</span><span>伶俜街道</span></div>
+          <div class="avatar"><img src="class=&quot;avatarImg&quot;"></div>
+          <div class="twoUnit">
+            <div><span>民族</span><span>汉族</span><span>文化程度</span><span>大学专科及以上</span></div>
+            <div><span>宗教信仰</span><span><span>婚姻状况</span><span>其他:不愿透露</span></span></div>
+          </div>
+          <div class="topTwo"><span>居住情况</span><span>养老机构</span></div>
+          <div class="topTwo"><span>医疗费用支付方式</span><span>商业医疗保险,其他:别人给</span></div>
+          <div class="topTwo"><span>经济来源</span><span>退休金/养老金,其他补贴退休金/养老金金额1200元/月保险费500元/月</span></div>
+          <div class="topTwo"><span>特殊事项记录</span><span>备注1</span></div>
+        </div>
+        <div class="tableTitle">信息提供者及联系人信息</div>
+        <div class="tableInfo">
+          <div class="topTwo"><span>信息提供者的姓名</span><span>万三</span></div>
+          <div class="topTwo"><span>信息提供者与老人的关系</span><span>其他:经纪人</span></div>
+          <div class="topTwo"><span>联系人姓名</span><span>万三</span></div>
+          <div class="topTwo"><span>联系人电话</span><span>15255006021</span></div>
+          <div class="topTwo"><span>特殊事项记录</span><span>备注2</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    * {
+      page-break-before: always;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .special180 {
+      margin-top: 180px !important;
+    }
+
+    .header {
+      display: flex;
+      border-bottom: 1px solid #efefef;
+    }
+
+    .header div {
+      margin-left: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #efefef;
+      border-radius: 10px 10px 0 0;
+      color: black;
+      background-color: lightgray;
+    }
+
+    .header div.select {
+      background-color: #fff;
+      border: 1px solid #efefef;
+      border-bottom: none;
+      color: black;
+    }
+
+    .tableTitle {
+      color: black;
+      font-size: 17px;
+      padding-left: 10px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      page-break-before: always;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+
+    .adjustEnd {
+      font-size: 8px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .adjustEnd .avatarImg {
+      height: 85px;
+      width: 80px;
+      margin-top: 14px;
+    }
+
+    .adjustEnd .tableTitle {
+      color: black;
+      font-size: 17px;
+      padding-left: 10px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      page-break-before: always;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+
+    .adjustEnd .tableInfo {
+      border: 1px solid black;
+      margin: 10px 7px;
+      position: relative;
+      display: inline-flex;
+      width: 97%;
+      flex-direction: column;
+    }
+
+    .adjustEnd .tableInfo .feng {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .adjustEnd .tableInfo .feng .oneLeft {
+      display: inline-flex;
+      width: 300px;
+      border-right: 1px solid black;
+      align-items: center;
+      height: 88px;
+      justify-content: center;
+      border-bottom: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .feng .oneRight {
+      flex: 3 1;
+      display: inline-flex;
+      flex-direction: column;
+      height: 100%;
+      border-bottom: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .feng .oneRight>div {
+      display: inline-flex;
+      width: 100%;
+      flex-direction: row;
+    }
+
+    .adjustEnd .tableInfo .feng .oneRight>div .smallFen {
+      display: inline-flex;
+      flex-direction: column;
+      flex: 1 1;
+    }
+
+    .adjustEnd .tableInfo .feng .oneRight>div .smallFen span {
+      display: inline-flex;
+      flex: 1 1;
+      border-right: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .feng .oneRight>div .smallFen span:first-child {
+      font-weight: bold;
+      border-bottom: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .feng .oneRight>div .smallFen:last-child span {
+      border-right: 0;
+    }
+
+    .adjustEnd .tableInfo .feng .oneRight>div:first-child {
+      border-bottom: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .avatar {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 109px;
+      background-color: white;
+      border-left: 1px solid black;
+      border-bottom: 1px solid black;
+      padding: 10px;
+    }
+
+    .adjustEnd .tableInfo .moreLines {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      page-break-before: always;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+
+    .adjustEnd .tableInfo .moreLines .oneLeft {
+      display: inline-flex;
+      width: 153px;
+      border-right: 1px solid black;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .moreLines .oneRight {
+      flex: 3 1;
+      display: inline-flex;
+      flex-direction: column;
+      height: 100%;
+      border-bottom: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .moreLines .oneRight>div {
+      display: flex;
+      border-bottom: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .moreLines .oneRight>div>span {
+      display: block;
+      flex: 1 1;
+      padding: 3px 10px;
+    }
+
+    .adjustEnd .tableInfo .moreLines .oneRight>div>span:first-child {
+      width: 45%;
+      border-right: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .moreLines .oneRight>div>span:nth-of-type(3n) {
+      border-left: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .moreLines .oneRight>div:last-child {
+      border-bottom: 0;
+    }
+
+    .adjustEnd .tableInfo .fiveLines .oneLeft {
+      height: 119px;
+    }
+
+    .adjustEnd .tableInfo .threeLines .oneLeft {
+      height: 71px;
+    }
+
+    .adjustEnd .tableInfo .twelveLines .oneLeft {
+      height: 321px;
+    }
+
+    .adjustEnd .tableInfo .fourLines .oneLeft {
+      height: 168px;
+    }
+
+    .adjustEnd .tableInfo .sevenLines .oneLeft {
+      height: 201px;
+    }
+
+    .adjustEnd .tableInfo .topOne {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .adjustEnd .tableInfo .topOne .oneLeft {
+      display: inline-flex;
+      width: 121px;
+      border-right: 1px solid black;
+      align-items: center;
+      height: 47px;
+      justify-content: center;
+      border-bottom: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .topOne .oneRight {
+      flex: 3 1;
+      display: inline-flex;
+      flex-direction: column;
+      height: 100%;
+      border-bottom: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .topOne .oneRight>div {
+      display: flex;
+    }
+
+    .adjustEnd .tableInfo .topOne .oneRight>div>span {
+      display: flex;
+      padding: 3px 10px;
+    }
+
+    .adjustEnd .tableInfo .topOne .oneRight>div>span>em {
+      display: inline-block;
+      padding-left: 10px;
+      font-style: normal;
+    }
+
+    .adjustEnd .tableInfo .topOne .oneRight>div>span:first-child {
+      width: 45%;
+      border-right: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .topOne .oneRight>div:first-child {
+      border-bottom: 1px solid black;
+    }
+
+    .adjustEnd .tableInfo .topTwo {
+      display: inline-flex;
+      flex-direction: row;
+      width: 100%;
+      height: 25px;
+      border-bottom: 1px solid black;
+      page-break-before: always;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+
+    .adjustEnd .tableInfo .topTwo span {
+      display: inline-flex;
+      padding: 0 10px;
+      align-items: center;
+      justify-content: center;
+      page-break-before: always;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+
+    .adjustEnd .tableInfo .topTwo span:first-child {
+      width: 153px;
+      height: 25px;
+      border-right: 1px solid black;
+      page-break-before: always;
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+
+    .adjustEnd .tableInfo .twoUnit div {
+      display: flex;
+    }
+
+    .adjustEnd .tableInfo .twoUnit div :last-child {
+      border-right: none;
+    }
+
+    .adjustEnd .tableInfo .twoUnit div :first-child {
+      width: 412px !important;
+    }
+
+    .adjustEnd .tableInfo .twoUnit span {
+      display: block;
+      width: 345px;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+    }
+
+    .adjustEnd .tableInfo .signal {
+      border-bottom: 1px solid black;
+      padding: 20px;
+      padding-bottom: 0;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    .adjustEnd .tableInfo .signal .dateinfo {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .adjustEnd .tableInfo .signal .dateinfo>div span {
+      display: inline-flex;
+    }
+
+    .adjustEnd .tableInfo .signal .dateinfo>div span.names {
+      border-bottom: 1px solid black;
+      min-width: 75px;
+    }
+
+    .adjustEnd .btns {
+      padding: 15px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .detailTable .oneRight div {
+      display: flex;
+    }
+
+    .detailTable .moreLines .oneRight div span {
+      height: 57px;
+    }
+
+    .detailTable .moreLines .oneRight  div span:first-of-type {
+      flex: 1;
+    }
+
+    .detailTable .moreLines .oneRight div span:nth-of-type(2n) {
+      flex: 1;
+    }
+
+    .detailTable .moreLines .oneRight  div span:nth-of-type(3n) {
+      flex: 3;
+    }
+
+    .detailTable .moreLines .oneLeft {
+      width: 95px !important;
+    }
+
+    .detailTable .detailtwelveLines .oneLeft {
+      height: 767px !important;
+    }
+
+    .detailTable .detailfiveLines .oneLeft {
+      height: 319px !important;
+    }
+
+    .detailTable .detailsevenLines .oneLeft {
+      height: 447px !important;
+    }
+
+    .printbg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #fff;
+      z-index: 99999;
+    }
+  </style>
+  <script src="http://test.cybqd.com/html2canvas.js"></script>
+  <script src="http://test.cybqd.com/jsPdf.debug.js">
+  </script>
+  <script src="http://test.cybqd.com/print.js"></script>
+  <script>
+    window.onload = function () {
+      printPage('老年人能力等级评估')
+    }
+  </script>
+
+
+
+
+
+
+
+</body></html>
