@@ -1,34 +1,55 @@
 class Queue {
-	constructor(items) {
-        this.items = items || []
+	constructor() {
+        this.count = 0;
+        this.lowestCount = 0;
+        this.items = {};
     }
 
     enqueue(element){
-        this.items.push(element)
+        this.items[this.count] = element;
+        this.count++;
     }
 
     dequeue(){
-        return this.items.shift()
+        if(this.isEmpty()) {
+            return ''
+        }
+        const result = this.items[this.lowestCount]
+        delete this.items[this.lowestCount]
+        this.lowestCount++;
+        return result
     }
 
-    front(){
-        return this.items[0]
+    peek(){
+        if(this.isEmpty()){
+            return ''
+        }
+        return this.items[this.lowestCount]
     }
 
     clear(){
-        this.items = []
+        this.count = 0;
+        this.items = {};
+        this.lowestCount = 0;
     }
 
     get size(){
-        return this.items.length
+        return this.count - this.lowestCount
     }
 
     get isEmpty(){
-        return !this.items.length
+        return this.count = this.lowestCount === 0
     }
 
-    print() {
-        console.log(this.items.toString())
+    toString() {
+        if(this.isEmpty()) {
+            return ''
+        }
+        let objString = ''
+        for(let i = this.lowestCount; i<this.count; i++){
+            objString = objString+ this.items[i]
+        }
+        return objString;
     }
 }
 

@@ -2,21 +2,27 @@ const Queue = require('./Queue');
 
 class PriorityQueue extends Queue{
 
-    constructor(items) {
-        super(items)
+    constructor() {
+        super()
     }
 
     enqueue(element, priority){
         const queueElement = { element, priority }
         if (this.isEmpty) {
-            this.items.push(queueElement)
+            this.items[this.count] = queueElement;
+            this.count++
         } else {
-            const preIndex = this.items.findIndex((item) => queueElement.priority < item.priority)
-            if (preIndex > -1) {
-                this.items.splice(preIndex, 0, queueElement)
-            } else {
-                this.items.push(queueElement)
+            let prevIndex = this.lowestCount;
+            for(let i=this.lowestCount; i<this.count;i++){
+                if(priority > this.items[i].priority){
+                    prevIndex = i;
+                    break;
+                }
             }
+            for(let j = this.count; j>prevIndex; j--) {
+                this.items[j] = this.items[j-1]
+            }
+            this.items[prevIndex] = queueElement
         }
     }
 }
